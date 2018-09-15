@@ -23,14 +23,14 @@
   margin: 5px 30px 5px 30px;
 }
 
-.sign-up-link {
+.sign-in-link {
   color: black;
   text-align: center;
   border-bottom: 1px black;
   width: auto;
 }
 
-.sign-up-link:hover {
+.sign-in-link:hover {
   opacity: 0.5;
   color: black;
 }

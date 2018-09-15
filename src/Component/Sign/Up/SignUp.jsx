@@ -13,8 +13,9 @@ class SignUp extends Component {
     };
   }
 
-  loginUser = () => {
+  signUpUser = () => {
     const { usernameValue, passwordValue } = this.state;
+    // Call sign up request here
   };
 
   updateUsernameValue(e) {
@@ -55,10 +56,10 @@ class SignUp extends Component {
               />
             </CardBody>
             <br />
-            <Button className="sign-up-button" onClick={this.loginUser}>
-              Sign-in
+            <Button className="sign-up-button" onClick={this.signUpUser}>
+              Sign-up
             </Button>
-            <Link to="/sign-in" className="sign-up-link">
+            <Link to="/sign-in" className="sign-in-link">
               <p>Already have a profile? Sign-in.</p>
             </Link>
           </Card>
