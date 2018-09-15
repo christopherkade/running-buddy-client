@@ -44,3 +44,8 @@
 .logo {
   width: 60px;
 }
+
+.logo-link:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}

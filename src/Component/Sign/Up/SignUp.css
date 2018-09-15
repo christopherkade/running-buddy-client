@@ -40,3 +40,8 @@
   box-shadow: none;
   outline: 0 none;
 }
+
+.logo-link:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}

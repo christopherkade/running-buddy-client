@@ -34,7 +34,7 @@ class SignUp extends Component {
     const { usernameValue, passwordValue } = this.state;
     return (
       <div className="sign-up-wrapper">
-        <Link to="/">
+        <Link to="/" className="logo-link">
           <img src={logo} alt="logo" className="logo" />
         </Link>
         <div className="row justify-content-md-center align-items-center sign-up">

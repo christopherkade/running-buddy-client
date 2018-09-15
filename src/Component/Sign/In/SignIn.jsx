@@ -34,7 +34,7 @@ class SignIn extends Component {
     const { usernameValue, passwordValue } = this.state;
     return (
       <div className="sign-in-wrapper">
-        <Link to="/">
+        <Link to="/" className="logo-link">
           <img src={logo} alt="logo" className="logo" />
         </Link>
         <div className="row justify-content-md-center align-items-center sign-in">
@@ -57,7 +57,7 @@ class SignIn extends Component {
             </CardBody>
             <br />
             <Button className="log-in-button" onClick={this.loginUser}>
-              Log-in
+              Sign-in
             </Button>
             <Link to="/sign-up" className="sign-up-link">
               <p>Don't have a profile? Sign-up.</p>
