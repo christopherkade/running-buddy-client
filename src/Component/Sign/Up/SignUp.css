@@ -1,4 +1,4 @@
-.sign-in-wrapper {
+.sign-up-wrapper {
   background: url('./../../Landing/Running-paris.jpg');
   background-size: cover;
   height: 100vh;
@@ -7,7 +7,7 @@
   padding-top: 20vh;
 }
 
-.sign-in {
+.sign-up {
   padding: 10px;
 }
 
@@ -19,7 +19,7 @@
   margin-bottom: 15px;
 }
 
-.log-in-button {
+.sign-up-button {
   margin: 5px 30px 5px 30px;
 }
 
@@ -39,8 +39,4 @@
   border-color: lightgray;
   box-shadow: none;
   outline: 0 none;
-}
-
-.logo {
-  width: 60px;
 }
