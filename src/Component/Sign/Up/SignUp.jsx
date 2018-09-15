@@ -8,15 +8,22 @@ class SignUp extends Component {
   constructor() {
     super();
     this.state = {
+      emailValue: '',
       usernameValue: '',
       passwordValue: ''
     };
   }
 
   signUpUser = () => {
-    const { usernameValue, passwordValue } = this.state;
+    const { emailValue, usernameValue, passwordValue } = this.state;
     // Call sign up request here
   };
+
+  updateEmailValue(e) {
+    this.setState({
+      emailValue: e.target.value
+    });
+  }
 
   updateUsernameValue(e) {
     this.setState({
@@ -31,7 +38,7 @@ class SignUp extends Component {
   }
 
   render() {
-    const { usernameValue, passwordValue } = this.state;
+    const { emailValue, usernameValue, passwordValue } = this.state;
     return (
       <div className="sign-up-wrapper">
         <Link to="/" className="logo-link">
@@ -40,6 +47,14 @@ class SignUp extends Component {
         <div className="row justify-content-md-center align-items-center sign-up">
           <Card>
             <CardBody>
+              <Input
+                placeholder="E-mail"
+                type="email"
+                className="input input-email"
+                value={emailValue}
+                onChange={e => this.updateEmailValue(e)}
+              />
+
               <Input
                 placeholder="Username"
                 className="input input-username"

@@ -62,7 +62,7 @@ class Landing extends Component {
 
         <div className="landing-block2">
           <h3>What are you waiting for? Sign up, it's free !</h3>
-          <Link to="/sign-in">
+          <Link to="/sign-up">
             <button type="button" className="btn btn-primary join-button">
               Join
             </button>
