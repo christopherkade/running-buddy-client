@@ -1,0 +1,36 @@
+.landing {
+  text-align: center;
+  padding: 10vh;
+}
+
+.landing-text {
+  padding-top: 15vh;
+}
+
+.landing-text-right {
+  text-align: left;
+}
+
+.first-row {
+  padding: 5vh;
+}
+
+.landing-img-rect {
+  width: 400px;
+  height: 300px;
+}
+
+.first-row,
+.second-row {
+  margin-top: 100px;
+}
+
+.landing-cta {
+  margin-top: 100px;
+}
+
+@media (max-width: 767px) {
+  .landing-img {
+    height: 60%;
+  }
+}

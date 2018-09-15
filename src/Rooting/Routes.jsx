@@ -1,8 +1,9 @@
 import App from '../Component/App/App';
+import Landing from '../Component/Landing/Landing';
 
 const routes = {
-    "/": App,
-    "/login": App,
+  '/': Landing,
+  '/login': App,
 };
 
 export default routes;
