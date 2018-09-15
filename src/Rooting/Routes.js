@@ -3,7 +3,7 @@ import Landing from '../Component/Landing/Landing';
 
 const routes = {
   '/': Landing,
-  '/login': App,
+  '/login': App
 };
 
 export default routes;
