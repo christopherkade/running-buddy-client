@@ -1,13 +1,14 @@
+import React from 'react';
 import Landing from '../Component/Landing/Landing';
 import SignIn from '../Component/Sign/In';
 
 const routes = {
   '/': {
-    component: Landing,
+    component: <Landing />,
     nav: false
   },
   '/login': {
-    component: SignIn,
+    component: <SignIn />,
     nav: true
   }
 };
