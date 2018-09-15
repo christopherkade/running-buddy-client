@@ -11,6 +11,20 @@
   height: 100vh;
 }
 
+.sign-in-button {
+  background-color: white;
+  color: black;
+  border-color: black;
+  float: right;
+  margin: 20px;
+}
+
+.sign-in-button:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black;
+}
+
 .landing-title {
   padding-top: 35vh;
 }
@@ -39,7 +53,6 @@
 }
 
 .arrow-invert {
-  /* transform: rotate(45deg); */
   transform: scale(-1, 1);
 }
 
@@ -54,6 +67,31 @@
 .block-left {
   margin-left: 50vh;
   text-align: left;
+}
+
+.landing-block2 {
+  padding: 50px;
+}
+
+.join-button {
+  font-size: 1.5em;
+  margin-top: 5vh;
+  background-color: black;
+  color: white;
+  border-color: black;
+  font-size: 2em;
+}
+
+.join-button:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black;
+}
+
+@media (max-width: 1400px) {
+  .divider {
+    display: none;
+  }
 }
 
 /* Large */
@@ -86,5 +124,9 @@
 
   .block-left {
     margin-left: 5vh;
+  }
+
+  .landing-title {
+    padding-top: 20vh;
   }
 }

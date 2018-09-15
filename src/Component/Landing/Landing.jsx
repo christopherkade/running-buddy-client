@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './Landing.css';
 import scrollToComponent from 'react-scroll-to-component';
+import { Link } from 'react-router-dom';
 import arrow from './arrow.svg';
+import divider from './divider.svg';
 
 class Landing extends Component {
   constructor() {
@@ -11,7 +13,6 @@ class Landing extends Component {
 
   scrollToElement = () => {
     scrollToComponent(this.block1, {
-      offset: 1000,
       align: 'top',
       duration: 1500
     });
@@ -21,6 +22,12 @@ class Landing extends Component {
     return (
       <div className="landing-wrapper">
         <div className="landing">
+          <Link to="/login">
+            <button type="button" className="btn btn-primary sign-in-button">
+              Sign-in
+            </button>
+          </Link>
+
           <h1 className="landing-title">Runnig Buddy, your fitness companion</h1>
           <button
             type="button"
@@ -49,6 +56,17 @@ class Landing extends Component {
 
             <p>Join a massive network of like-minded people !</p>
           </div>
+        </div>
+
+        <img className="divider" src={divider} alt="divider" />
+
+        <div className="landing-block2">
+          <h3>What are you waiting for? Sign up, it's free !</h3>
+          <Link to="/login">
+            <button type="button" className="btn btn-primary join-button">
+              Join
+            </button>
+          </Link>
         </div>
       </div>
     );
