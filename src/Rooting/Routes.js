@@ -1,5 +1,5 @@
 import Landing from '../Component/Landing/Landing';
-import SignIn from '../Component/Sign/In';
+import SignIn from '../Component/Sign/In/SignIn';
 
 const routes = {
   '/': {
