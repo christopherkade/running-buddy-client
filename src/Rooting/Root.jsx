@@ -10,7 +10,7 @@ const Root = ({ store }) => (
       <div>
         <Navigation />
         {Object.keys(routes).map(route => (
-          <Route exact key={`route-${route}`} path={route} component={routes[route]} />
+          <Route exact key={`route-${route}`} path={route} component={routes[route].component} />
         ))}
       </div>
     </Router>

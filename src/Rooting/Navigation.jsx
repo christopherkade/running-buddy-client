@@ -14,52 +14,40 @@ import {
   Button
 } from 'reactstrap';
 import { FaUser } from 'react-icons/fa';
+import './Navigation.css';
 
-const style = {
-  navbar: {
-    backgroundColor: '#94af76'
-  },
-  buttonDropdown: {
-    backgroundColor: '#caa053',
-    border: 'None'
-  },
-  card: {
-    width: '350px'
-  },
-  span: {
-    color: 'white'
-  }
+const Navigation = props => {
+  console.log(props);
+  return (
+    <div>
+      <Navbar className="navbar fixed-top" light>
+        <NavbarBrand>
+          <span>Running Buddy</span>
+        </NavbarBrand>
+        <Nav className="ml-auto" navbar>
+          <UncontrolledDropdown>
+            <DropdownToggle className="buttonDropdown">
+              <FaUser />
+            </DropdownToggle>
+            <DropdownMenu right>
+              <Card className="card">
+                <CardBody>
+                  <CardTitle>Hello , $name</CardTitle>
+                  <CardSubtitle>Card subtitle</CardSubtitle>
+                  <CardText>
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </CardText>
+                  <Button>Profile setting</Button>
+                  <Button>Sign out</Button>
+                </CardBody>
+              </Card>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </Nav>
+      </Navbar>
+    </div>
+  );
 };
-
-const Navigation = () => (
-  <div>
-    <Navbar style={style.navbar} light>
-      <NavbarBrand>
-        <span style={style.span}>Running Buddy</span>
-      </NavbarBrand>
-      <Nav className="ml-auto" navbar>
-        <UncontrolledDropdown>
-          <DropdownToggle style={style.buttonDropdown}>
-            <FaUser />
-          </DropdownToggle>
-          <DropdownMenu right>
-            <Card style={style.card}>
-              <CardBody>
-                <CardTitle>Hello , $name</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </CardText>
-                <Button>Profile setting</Button>
-                <Button>Sign out</Button>
-              </CardBody>
-            </Card>
-          </DropdownMenu>
-        </UncontrolledDropdown>
-      </Nav>
-    </Navbar>
-  </div>
-);
 
 export default Navigation;
