@@ -1,0 +1,66 @@
+.dashboard {
+	height: 100%;
+	padding-top: 64px;
+}
+
+.row {
+	margin: 0;
+}
+
+.content {}
+
+.containerCards {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.card {
+	margin: 3.5vw;
+}
+
+.calendar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 8px;
+}
+
+.containerFooter {
+	display: flex;
+	justify-content: space-between;
+}
+
+.date {
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+}
+
+.badgeContainer {}
+
+.badgeCard {
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 3px 13px;
+	font-size: 1.3em;
+	color: white;
+}
+
+.badgeModal {
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 10px 13px;
+	color: white;
+}
+
+.badgeModalButton {
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 8px 11px;
+	color: white;
+
+}
