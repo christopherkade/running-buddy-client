@@ -1,20 +1,25 @@
 import React from 'react';
 import Landing from '../Component/Landing/Landing';
-import SignIn from '../Component/Sign/In';
 import Dashboard from '../Component/Dashboard';
+import SignIn from '../Component/Sign/In/SignIn';
+import SignUp from '../Component/Sign/Up/SignUp';
 
 const routes = {
   '/': {
     component: <Landing />,
     nav: false
   },
-  '/login': {
+  '/sign-in': {
     component: <SignIn />,
-    nav: true
+    nav: false
   },
   '/home': {
     component: <Dashboard />,
     nav: true
+  },
+  '/sign-up': {
+    component: <SignUp />,
+    nav: false
   }
 };
 

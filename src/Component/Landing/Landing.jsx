@@ -22,7 +22,7 @@ class Landing extends Component {
     return (
       <div className="landing-wrapper">
         <div className="landing">
-          <Link to="/login">
+          <Link to="/sign-in">
             <button type="button" className="btn btn-primary sign-in-button">
               Sign-in
             </button>
@@ -62,7 +62,7 @@ class Landing extends Component {
 
         <div className="landing-block2">
           <h3>What are you waiting for? Sign up, it's free !</h3>
-          <Link to="/login">
+          <Link to="/sign-up">
             <button type="button" className="btn btn-primary join-button">
               Join
             </button>

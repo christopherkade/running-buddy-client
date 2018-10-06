@@ -1,4 +1,4 @@
-.sign-in-wrapper {
+.sign-up-wrapper {
   background: url('./../../Landing/Running-paris.jpg');
   background-size: cover;
   height: 100vh;
@@ -7,7 +7,7 @@
   padding-top: 20vh;
 }
 
-.sign-in {
+.sign-up {
   padding: 10px;
 }
 
@@ -15,22 +15,23 @@
   text-align: center;
 }
 
-.input-email {
+.input-email,
+.input-username {
   margin-bottom: 15px;
 }
 
-.log-in-button {
+.sign-up-button {
   margin: 5px 30px 5px 30px;
 }
 
-.sign-up-link {
+.sign-in-link {
   color: black;
   text-align: center;
   border-bottom: 1px black;
   width: auto;
 }
 
-.sign-up-link:hover {
+.sign-in-link:hover {
   opacity: 0.5;
   color: black;
 }
@@ -41,11 +42,13 @@
   outline: 0 none;
 }
 
-.logo {
-  width: 60px;
-}
-
 .logo-link:hover {
   opacity: 0.7;
   transition: opacity 0.3s;
+}
+
+@media (max-width: 600px) {
+  .sign-up-wrapper {
+    padding-top: 10vh;
+  }
 }
