@@ -31,6 +31,7 @@ export function itemsFetchData(url) {
           throw Error(response.statusText);
         }
         dispatch(itemsIsLoading(false));
+        console.log('res : ', response);
         return response;
       })
       .then(response => response.json())

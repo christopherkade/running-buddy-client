@@ -5,16 +5,11 @@ import {
   Nav,
   UncontrolledDropdown,
   DropdownToggle,
-  DropdownMenu,
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
+  DropdownMenu
 } from 'reactstrap';
 import { FaUser } from 'react-icons/fa';
 import './Navigation.css';
+import Setting from '../Component/Setting';
 
 const Navigation = props => (
   <div>
@@ -27,20 +22,7 @@ const Navigation = props => (
           <DropdownToggle className="buttonDropdown">
             <FaUser />
           </DropdownToggle>
-          <DropdownMenu right>
-            <Card className="card">
-              <CardBody>
-                <CardTitle>Hello , $name</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </CardText>
-                <Button>Profile setting</Button>
-                <Button>Sign out</Button>
-              </CardBody>
-            </Card>
-          </DropdownMenu>
+          <Setting />
         </UncontrolledDropdown>
       </Nav>
     </Navbar>

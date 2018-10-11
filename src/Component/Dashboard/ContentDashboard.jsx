@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { itemsFetchData } from '../../Action/FetchSession';
+import { itemsFetchData } from '../../Action/Fetch';
 import DashboardCards from './DashboardCards';
 
 class ContentDashboard extends Component {
