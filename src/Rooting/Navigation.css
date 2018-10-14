@@ -14,3 +14,55 @@
 span {
   color: white;
 }
+
+/* ProfileCard */
+
+.dropdown-menu {
+  padding-bottom: 0;
+}
+
+.profileCard {
+  border: none;
+  margin: 0;
+  width: 350px;
+}
+
+.cardContent {
+  padding: 25px;
+}
+
+.cardBody {
+  padding: 0;
+}
+
+.daysToSession {
+  font-style: bold;
+}
+
+.separator {
+  border-bottom: 4px solid lightgray;
+  padding: 15px 0 15px 0;
+}
+
+.totalSessions,
+.totalDistricts {
+  font-size: 1.5em;
+}
+
+.totalSessionsNum,
+.totalDistrictsNum {
+  color: #caa053;
+  font-size: 1.75em;
+}
+
+.cardFooter {
+  text-align: center;
+}
+
+.cardFooter button:first-child {
+  margin-right: 25px;
+}
+
+.cardFooter button:last-child {
+  margin-left: 25px;
+}

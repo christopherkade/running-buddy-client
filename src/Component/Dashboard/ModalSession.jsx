@@ -11,21 +11,19 @@ const ModalSession = ({ session, toggleModal, modal }) => (
   <Modal isOpen={modal} toggle={toggleModal}>
     <ModalHeader toggle={toggleModal}>{session.label}</ModalHeader>
     <ModalBody>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </ModalBody>
-    <ModalBody>
-      <div className="containerFooter">
-        <div className="date">
-          <Input disabled value={`0${session.id}/10/2018`} />
-          <div className="calendar">
-            <FaCalendarAlt />
+      <div className="row">
+        <div className="col">Session description goes here</div>
+        <div className="col col-6 dateCol">
+          <div className="containerFooter">
+            <div className="date modalDate">
+              <Input disabled value={`0${session.id}/10/2018`} />
+              <div className="calendar modalCalendar">
+                <FaCalendarAlt />
+              </div>
+            </div>
+            <div />
           </div>
         </div>
-        <div />
       </div>
     </ModalBody>
     <ModalFooter>

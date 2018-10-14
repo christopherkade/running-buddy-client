@@ -23,7 +23,7 @@ class DashboardCards extends Component {
       <div className="card" onClick={this.toggleModal}>
         <div className="card-body">
           <h5 className="card-title">{session.label}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <div className="cardSeparator" />
           <p className="card-text">
             Some quick example text to build on the card title and make up the bulk of the card's
             content.

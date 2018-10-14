@@ -10,7 +10,7 @@ import {
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
+  CardFooter,
   Button
 } from 'reactstrap';
 import { FaUser } from 'react-icons/fa';
@@ -28,16 +28,26 @@ const Navigation = props => (
             <FaUser />
           </DropdownToggle>
           <DropdownMenu right>
-            <Card className="card">
-              <CardBody>
-                <CardTitle>Hello , $name</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
-                </CardText>
-                <Button>Profile setting</Button>
-                <Button>Sign out</Button>
+            <Card className="card profileCard">
+              <CardBody className="cardBody">
+                <div className="cardContent">
+                  <CardTitle>Hello , $name</CardTitle>
+                  <CardText>
+                    Your next session will be in <strong>X days</strong> at Y P.M ($day, $date of
+                    $month)
+                    <div className="separator" />
+                    <div className="totalSessions">
+                      <span className="totalSessionsNum">X</span> sessions done in total
+                    </div>
+                    <div className="totalDistricts">
+                      <span className="totalDistrictsNum">Y</span> destricts discovered
+                    </div>
+                  </CardText>
+                </div>
+                <CardFooter className="cardFooter">
+                  <Button>Profile setting</Button>
+                  <Button>Sign out</Button>
+                </CardFooter>
               </CardBody>
             </Card>
           </DropdownMenu>

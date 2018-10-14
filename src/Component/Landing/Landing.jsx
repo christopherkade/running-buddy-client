@@ -28,7 +28,7 @@ class Landing extends Component {
             </button>
           </Link>
 
-          <h1 className="landing-title">Runnig Buddy, your fitness companion</h1>
+          <h1 className="landing-title">Running Buddy, your fitness companion</h1>
           <button
             type="button"
             className="btn btn-primary landing-button"

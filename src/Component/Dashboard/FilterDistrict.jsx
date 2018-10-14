@@ -8,8 +8,8 @@ import './Dashboard.css';
 const districtCounter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
 const FilterDistrict = ({ chooseADistrict }) => (
-  <div className="row align-items-center">
-    <div className="col-2 align-self-start">Choose your district :</div>
+  <div className="row align-items-center filterDistrictWrapper">
+    <div className="col-2 align-self-start filterText">Choose your district :</div>
     <div className="col align-self-start">
       <ButtonGroup>
         {districtCounter.map(e => (
