@@ -3,7 +3,8 @@
   "parser": "babel-eslint",
   "plugins": ["prettier", "jest"],
   "env": {
-    "jest/globals": true
+    "jest/globals": true,
+    "browser": true
   },
   "rules": {
     "prettier/prettier": ["error"],
