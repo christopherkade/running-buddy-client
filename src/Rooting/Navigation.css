@@ -1,68 +1,68 @@
 .navbar {
-  background-color: #94af76;
+	background-color: #94af76;
 }
 
 .buttonDropdown {
-  background-color: #caa053;
-  border: None;
+	background-color: #caa053;
+	border: None;
 }
 
 .card {
-  width: 350px;
+	width: 350px;
 }
 
 span {
-  color: white;
+	color: white;
 }
 
 /* ProfileCard */
 
 .dropdown-menu {
-  padding-bottom: 0;
+	padding-bottom: 0;
 }
 
 .profileCard {
-  border: none;
-  margin: 0;
-  width: 350px;
+	border: none;
+	margin: 0;
+	width: 350px;
 }
 
 .cardContent {
-  padding: 25px;
+	padding: 25px;
 }
 
 .cardBody {
-  padding: 0;
+	padding: 0;
 }
 
 .daysToSession {
-  font-style: bold;
+	font-style: bold;
 }
 
 .separator {
-  border-bottom: 4px solid lightgray;
-  padding: 15px 0 15px 0;
+	border-bottom: 4px solid lightgray;
+	padding: 15px 0 15px 0;
 }
 
 .totalSessions,
 .totalDistricts {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .totalSessionsNum,
 .totalDistrictsNum {
-  color: #caa053;
-  font-size: 1.75em;
+	color: #caa053;
+	font-size: 1.75em;
 }
 
 .cardFooter {
-  text-align: center;
+	text-align: center;
 }
 
 .cardFooter button:first-child {
-  margin-right: 25px;
+	margin-right: 25px;
 }
 
 .cardFooter button:last-child {
-  margin-left: 25px;
+	margin-left: 25px;
 }
