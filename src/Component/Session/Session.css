@@ -1,0 +1,21 @@
+.session {
+	margin-top: 56px;
+}
+
+.floatingButton {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	padding: 16px 20px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 60;
+	outline: none;
+	color: white;
+	background-color: #94af76;
+}
+
+.floatingButton:hover {
+	background-color: #c5e1a5;
+}
