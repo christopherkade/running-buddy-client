@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Setting.css';
 import { CardBody, CardTitle, Button, DropdownMenu } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import ModalProfile from './ModalProfile';
 
 class Setting extends Component {
@@ -38,7 +39,9 @@ class Setting extends Component {
                 </div>
                 <div className="groupButton">
                   <Button onClick={this.toggleModal}>Change profile</Button>
-                  <Button color="info">My sessions</Button>
+                  <Link to="/session">
+                    <Button color="info">My sessions</Button>
+                  </Link>
                   <Button color="danger">Sign out</Button>
                 </div>
               </div>
