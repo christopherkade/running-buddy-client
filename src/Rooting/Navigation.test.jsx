@@ -14,3 +14,7 @@ beforeEach(() => {
 it('renders without crashing', () => {
   expect(wrapper).not.toBe(null);
 });
+
+it('should display a valid title', () => {
+  expect(wrapper.find('.title').text()).toBe('Running Buddy');
+});
