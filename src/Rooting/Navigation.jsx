@@ -21,7 +21,7 @@ const Navigation = props => (
   <div>
     <Navbar className="navbar fixed-top" light>
       <NavbarBrand>
-        <span>Running Buddy</span>
+        <span className="title">Running Buddy</span>
       </NavbarBrand>
       <Nav className="ml-auto" navbar>
         <UncontrolledDropdown>
