@@ -1,5 +1,6 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
+import sinon from 'sinon';
 import Adapter from 'enzyme-adapter-react-16';
 import SignIn from './SignIn';
 
@@ -31,11 +32,24 @@ it('should have the correct sign-up navigation links', () => {
   expect(wrapper.find('.sign-up-link').props().to).toBe('/sign-up');
 });
 
-/* it('should handle input change', () => {
-  const event = { target: { email: 'c.kade96@gmail.com', password: 'abcdefg' } };
-  const mountedWrapper = mount(<SignIn />);
-  const updateEmailSpy = sinon.spy(mountedWrapper.instance(), 'updateEmailValue');
-  mountedWrapper.update();
-  mountedWrapper.ref('email').simultate('change', event);
-  expect(updateEmailSpy.calledOnce).to.equal(true);
-}); */
+it('should have the right email placeholder', () => {
+  expect(wrapper.find('.input-email').props().placeholder).toBe('E-mail');
+});
+
+it('should have the right password placeholder', () => {
+  expect(wrapper.find('.input-password').props().placeholder).toBe('Password');
+});
+
+it('should handle email input changes', () => {
+  const handleChangeSpy = sinon.spy(SignIn.prototype, 'updateEmailValue');
+  const event = { target: { name: 'email', value: 'fakeemail@gmail.com' } };
+  wrapper.find('.input-email').simulate('change', event);
+  expect(handleChangeSpy.calledOnce).toBe(true);
+});
+
+it('should handle password input changes', () => {
+  const handleChangeSpy = sinon.spy(SignIn.prototype, 'updatePasswordValue');
+  const event = { target: { name: 'password', value: 'badPassword123' } };
+  wrapper.find('.input-password').simulate('change', event);
+  expect(handleChangeSpy.calledOnce).toBe(true);
+});
