@@ -14,6 +14,7 @@ const FilterDistrict = ({ chooseADistrict }) => (
       <ButtonGroup>
         {districtCounter.map(e => (
           <Button
+            className="district-button"
             onClick={() => {
               chooseADistrict(e);
             }}

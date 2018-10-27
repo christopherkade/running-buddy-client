@@ -39,7 +39,7 @@ class Setting extends Component {
                 </div>
                 <div className="groupButton">
                   <Button onClick={this.toggleModal}>Change profile</Button>
-                  <Link to="/session">
+                  <Link to="/session" className="sessions-button">
                     <Button color="info">My sessions</Button>
                   </Link>
                   <Button color="danger">Sign out</Button>
