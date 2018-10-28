@@ -17,6 +17,7 @@ class Setting extends Component {
 
   render() {
     const { modal } = this.state;
+    console.log(this.props);
     return (
       <React.Fragment>
         <DropdownMenu right className="dropdownMenu">
@@ -42,7 +43,16 @@ class Setting extends Component {
                   <Link to="/session">
                     <Button color="info">My sessions</Button>
                   </Link>
-                  <Button color="danger">Sign out</Button>
+                  <Button
+                    onClick={() => {
+                      localStorage.setItem('jwt', '');
+                      localStorage.setItem('email', '');
+                      this.props.history.push('/sign-in');
+                    }}
+                    color="danger"
+                  >
+                    Sign out
+                  </Button>
                 </div>
               </div>
             </div>

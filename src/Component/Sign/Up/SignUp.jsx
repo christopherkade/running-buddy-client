@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardBody, Button, Input } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import fetch from 'cross-fetch';
 import './SignUp.css';
 import logo from '../In/heartbeat.svg';
 
@@ -16,7 +17,21 @@ class SignUp extends Component {
 
   signUpUser = () => {
     const { emailValue, usernameValue, passwordValue } = this.state;
-    // Call sign up request here
+    fetch('http://localhost:3000/user/register', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email: emailValue, password: passwordValue, username: usernameValue })
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        localStorage.setItem('jwt', data.token);
+        localStorage.setItem('email', emailValue);
+        this.props.history.push('/home');
+      });
   };
 
   updateEmailValue(e) {

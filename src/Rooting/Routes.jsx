@@ -7,24 +7,29 @@ import Session from '../Component/Session/index';
 
 const routes = {
   '/': {
-    component: <Landing />,
-    nav: false
+    component: history => <Landing history={history} />,
+    nav: false,
+    connected: false
   },
   '/sign-in': {
-    component: <SignIn />,
-    nav: false
+    component: history => <SignIn history={history} />,
+    nav: false,
+    connected: false
   },
   '/home': {
-    component: <Dashboard />,
-    nav: true
+    component: history => <Dashboard history={history} />,
+    nav: true,
+    connected: true
   },
   '/sign-up': {
-    component: <SignUp />,
-    nav: false
+    component: history => <SignUp history={history} />,
+    nav: false,
+    connected: false
   },
   '/session': {
-    component: <Session />,
-    nav: true
+    component: history => <Session history={history} />,
+    nav: true,
+    connected: true
   }
 };
 

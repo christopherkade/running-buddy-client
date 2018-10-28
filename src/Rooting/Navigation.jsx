@@ -28,7 +28,7 @@ const Navigation = props => (
           <DropdownToggle className="buttonDropdown">
             <FaUser />
           </DropdownToggle>
-          <Setting />
+          <Setting history={props.history} />
         </UncontrolledDropdown>
       </Nav>
     </Navbar>
