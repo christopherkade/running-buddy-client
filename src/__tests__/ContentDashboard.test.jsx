@@ -3,7 +3,7 @@ import * as enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import ContentDashboard from './ContentDashboard';
+import ContentDashboard from '../Component/Dashboard/ContentDashboard';
 
 let wrapper = null;
 const mockStore = configureMockStore();
