@@ -6,7 +6,7 @@ import Navigation from './Navigation.jsx';
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <Router>
+    <Router basename="/running-buddy-client">
       <div>
         {Object.keys(routes).map(route => (
           <Route
