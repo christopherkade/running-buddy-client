@@ -1,0 +1,19 @@
+language: 'node_js'
+node_js: '8'
+
+cache:
+  directories:
+    - 'node_modules'
+
+before_script:
+  - cp ./dist/index.html ./dist/404.html
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local_dir: build
+  repo: christopherkade/running-buddy-client
+  target_branch: gh-pages
+  on:
+    branch: dev
