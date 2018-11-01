@@ -7,7 +7,7 @@ import { FaCalendarAlt, FaUserAlt, FaPlus } from 'react-icons/fa';
 /* remove for api */
 const members = ['John', 'Thomas', 'Marie'];
 
-const ModalSession = ({ session, toggleModal, modal }) => (
+const ModalSession = ({ session, toggleModal, modal, update }) => (
   <Modal isOpen={modal} toggle={toggleModal}>
     <ModalHeader toggle={toggleModal}>{session.label}</ModalHeader>
     <ModalBody>
@@ -32,9 +32,15 @@ const ModalSession = ({ session, toggleModal, modal }) => (
           <FaUserAlt />
         </div>
       ))}
-      <Button className="badgeModalButton" onClick={toggleModal}>
-        <FaPlus />
-      </Button>
+      {update ? (
+        <Button color="danger" onClick={() => toggleModal(true)}>
+          delete Session
+        </Button>
+      ) : (
+        <Button className="badgeModalButton" onClick={toggleModal}>
+          <FaPlus />
+        </Button>
+      )}
     </ModalFooter>
   </Modal>
 );

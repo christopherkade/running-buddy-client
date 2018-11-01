@@ -17,7 +17,7 @@ class DashboardCards extends Component {
   };
 
   render() {
-    const { session } = this.props;
+    const { session, update } = this.props;
     const { modal } = this.state;
     return (
       <div className="card" onClick={this.toggleModal}>
@@ -40,7 +40,12 @@ class DashboardCards extends Component {
             </div>
           </div>
         </div>
-        <ModalSession session={session} toggleModal={this.toggleModal} modal={modal} />
+        <ModalSession
+          session={session}
+          toggleModal={this.toggleModal}
+          modal={modal}
+          update={update}
+        />
       </div>
     );
   }

@@ -11,7 +11,6 @@ import {
   FormGroup,
   Label
 } from 'reactstrap';
-import { FaCalendarAlt, FaUserAlt, FaPlus } from 'react-icons/fa';
 
 class ModalSession extends Component {
   constructor(props) {
@@ -20,10 +19,7 @@ class ModalSession extends Component {
   }
 
   render() {
-    const { modal, toggleModal, session, newSession } = this.props;
-    if (session) {
-      const { desc, name, date } = this.state;
-    }
+    const { modal, toggleModal } = this.props;
 
     return (
       <Modal isOpen={modal} toggle={() => toggleModal(true)}>
@@ -32,7 +28,12 @@ class ModalSession extends Component {
           <div>
             <FormGroup>
               <Label>Name</Label>
-              <Input placeholder="Name of the session" />
+              <Input
+                placeholder="Name of the session"
+                onChange={e => {
+                  this.setState({ name: e.target.value });
+                }}
+              />
             </FormGroup>
             <FormGroup>
               <Label>Description</Label>
@@ -41,11 +42,21 @@ class ModalSession extends Component {
                 rows="5"
                 id="comment"
                 placeholder="Session description"
+                onChange={e => {
+                  this.setState({ desc: e.target.value });
+                }}
               />
             </FormGroup>
             <FormGroup>
               <Label>Date</Label>
-              <Input type="date" placeholder="Date" />
+              <Input
+                type="date"
+                placeholder="Date"
+                onChange={e => {
+                  console.log(e.target.value);
+                  this.setState({ date: e.target.value });
+                }}
+              />
             </FormGroup>
           </div>
         </ModalBody>

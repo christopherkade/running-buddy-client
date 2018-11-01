@@ -1,94 +1,102 @@
 .dashboard {
-  height: 100%;
-  padding-top: 64px;
+	height: 100%;
+	padding-top: 64px;
 }
 
 .row {
-  margin: 0;
+	margin: 0;
 }
 
 .containerCards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .card {
-  margin: 3.5vw;
-  cursor: pointer;
+	margin: 3.5vw;
+	cursor: pointer;
 }
 
 .calendar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 8px;
 }
 
 .containerFooter {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .date {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
 }
 
 .badgeCard {
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  padding: 3px 13px;
-  font-size: 1.3em;
-  color: white;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 3px 13px;
+	font-size: 1.3em;
+	color: white;
 }
 
 .badgeModal {
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  padding: 10px 13px;
-  color: white;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 10px 13px;
+	color: white;
 }
 
 .badgeModalButton {
-  background-color: #ffd180;
-  border-radius: 50%;
-  display: inline-block;
-  padding: 8px 11px;
-  color: white;
-  border: 1px solid #ffd180;
+	background-color: #ffd180;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 8px 11px;
+	color: white;
+	border: 1px solid #ffd180;
 }
 
 /* DashboardCards */
 
 .cardSeparator {
-  border-bottom: 2px solid lightgray;
-  height: 4px;
+	border-bottom: 2px solid lightgray;
+	height: 4px;
 }
 
 .card-text {
-  padding-top: 10px;
+	padding-top: 10px;
+}
+
+.deleteButton {
+	border: none;
+	cursor: pointer;
+	position: fixed;
+	background-color: transparent;
+
 }
 
 /* FilterDistrict */
 
 .filterDistrictWrapper {
-  padding: 25px;
+	padding: 25px;
 }
 
 .filterText {
-  margin-top: 5px;
+	margin-top: 5px;
 }
 
 /* ModalSession */
 
 .dateCol {
-  padding-right: 0;
+	padding-right: 0;
 }
 
 .modalDate {
-  width: 70%;
+	width: 70%;
 }

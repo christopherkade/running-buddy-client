@@ -7,29 +7,23 @@ import ModalUpdate from './ModalUpdate';
 class Session extends Component {
   constructor(props) {
     super(props);
-    this.state = { modal: false, newSession: true };
+    this.state = { modal: false };
   }
 
   toggleModal = newSession => {
     const { modal } = this.state;
-    console.log(newSession);
-    this.setState({ newSession, modal: !modal });
+    this.setState({ modal: !modal });
   };
 
   render() {
-    const { modal, newSession, session } = this.state;
+    const { modal } = this.state;
     return (
       <div className="session">
-        <ContentDashboard />
+        <ContentDashboard update={true} />
         <button onClick={() => this.toggleModal(true)} className="floatingButton">
           <FaPlus />
         </button>
-        <ModalUpdate
-          toggleModal={this.toggleModal}
-          modal={modal}
-          newSession={newSession}
-          session={null}
-        />
+        <ModalUpdate toggleModal={this.toggleModal} modal={modal} />
       </div>
     );
   }

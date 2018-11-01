@@ -11,7 +11,7 @@ const Dashboard = () => (
       </div>
     </div>
     <div className="row content">
-      <ContentDashboard />
+      <ContentDashboard update={false} />
     </div>
   </div>
 );

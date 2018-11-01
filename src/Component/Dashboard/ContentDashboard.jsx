@@ -11,7 +11,7 @@ class ContentDashboard extends Component {
   }
 
   render() {
-    const { hasErrored, isLoading, items } = this.props;
+    const { hasErrored, isLoading, items, update } = this.props;
     if (hasErrored) {
       return <p>un probleme est survenu, réessayer dans quelques instants</p>;
     }
@@ -21,8 +21,7 @@ class ContentDashboard extends Component {
     return (
       <div className="containerCards">
         {items.map(item => (
-          <DashboardCards key={item.id} session={item} />
-          // <li key={item.id}>{item.label}</li>
+          <DashboardCards key={item.id} session={item} update={update} />
         ))}
       </div>
     );
@@ -33,7 +32,8 @@ ContentDashboard.propTypes = {
   fetchData: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   hasErrored: PropTypes.bool.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  upate: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
