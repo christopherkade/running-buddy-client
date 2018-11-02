@@ -63,7 +63,7 @@ class Root extends Component {
     const { store } = this.props;
     return (
       <Provider store={store}>
-        <Router>
+        <Router basename="/running-buddy-client">
           <div>
             {Object.keys(routes).map(route => (
               <Route
