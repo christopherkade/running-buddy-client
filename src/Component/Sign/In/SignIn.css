@@ -1,0 +1,51 @@
+.sign-in-wrapper {
+  background: url('./../../Landing/Running-paris.jpg');
+  background-size: cover;
+  height: 100vh;
+  padding: 10px;
+  text-align: center;
+  padding-top: 20vh;
+}
+
+.sign-in {
+  padding: 10px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.input-email {
+  margin-bottom: 15px;
+}
+
+.log-in-button {
+  margin: 5px 30px 5px 30px;
+}
+
+.sign-up-link {
+  color: black;
+  text-align: center;
+  border-bottom: 1px black;
+  width: auto;
+}
+
+.sign-up-link:hover {
+  opacity: 0.5;
+  color: black;
+}
+
+.input:focus {
+  border-color: lightgray;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.logo {
+  width: 60px;
+}
+
+.logo-link:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}

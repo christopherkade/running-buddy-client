@@ -1,0 +1,132 @@
+.landing-wrapper {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.landing {
+  background-image: url('./Running-paris.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.sign-in-button {
+  background-color: white;
+  color: black;
+  border-color: black;
+  float: right;
+  margin: 20px;
+}
+
+.sign-in-button:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black;
+}
+
+.landing-title {
+  padding-top: 35vh;
+}
+
+.landing-button {
+  margin-top: 5vh;
+  background-color: white;
+  color: black;
+  border-color: black;
+  font-size: 2em;
+}
+
+.landing-button:hover {
+  background-color: transparent;
+  border-color: black;
+  color: black;
+}
+
+.landing-block1 {
+  height: 100vh;
+  background-color: white;
+}
+
+.arrow {
+  width: 200px;
+}
+
+.arrow-invert {
+  transform: scale(-1, 1);
+}
+
+.landing-text-block {
+  margin-right: 45vh;
+}
+
+.block-right {
+  text-align: right;
+}
+
+.block-left {
+  margin-left: 50vh;
+  text-align: left;
+}
+
+.landing-block2 {
+  padding: 50px;
+}
+
+.join-button {
+  font-size: 1.5em;
+  margin-top: 5vh;
+  background-color: black;
+  color: white;
+  border-color: black;
+  font-size: 2em;
+}
+
+.join-button:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black;
+}
+
+@media (max-width: 1400px) {
+  .divider {
+    display: none;
+  }
+}
+
+/* Large */
+@media (max-width: 992px) {
+  .landing-text-block {
+    margin-right: 30vh;
+  }
+
+  .block-left {
+    margin-left: 30vh;
+  }
+}
+
+/* Medium */
+@media (max-width: 767px) {
+  .landing-text-block {
+    margin-right: 25vh;
+  }
+
+  .block-left {
+    margin-left: 25vh;
+  }
+}
+
+/* Small */
+@media (max-width: 600px) {
+  .landing-text-block {
+    margin-right: 5vh;
+  }
+
+  .block-left {
+    margin-left: 5vh;
+  }
+
+  .landing-title {
+    padding-top: 20vh;
+  }
+}

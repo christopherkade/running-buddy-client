@@ -1,0 +1,7 @@
+.groupButton {
+	display: flex;
+	flex-direction: column;
+	height: 130px;
+	padding: 0 40px;
+	justify-content: space-between;
+}
