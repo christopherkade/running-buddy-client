@@ -19,24 +19,22 @@ class DashboardCards extends Component {
   render() {
     const { session, update } = this.props;
     const { modal } = this.state;
+    const date = new Date(session.start);
     return (
       <div className="card" onClick={this.toggleModal}>
         <div className="card-body">
-          <h5 className="card-title">{session.label}</h5>
+          <h5 className="card-title">{session.title}</h5>
           <div className="cardSeparator" />
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
+          <p className="card-text">{session.description} </p>
           <div className="containerFooter">
             <div className="date">
-              <Input disabled value={`0${session.id}/10/2018`} />
+              <Input disabled value={date.toLocaleDateString()} />
               <div className="calendar">
                 <FaCalendarAlt />
               </div>
             </div>
             <div className="badgeContainer">
-              <div className="badgeCard">1</div>
+              <div className="badgeCard">{session.runner.length}</div>
             </div>
           </div>
         </div>

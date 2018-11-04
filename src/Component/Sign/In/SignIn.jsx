@@ -55,8 +55,8 @@ class SignIn extends Component {
           <Card>
             <CardBody>
               <Input
-                placeholder="E-mail"
-                type="email"
+                placeholder="Email"
+                type="text"
                 className="input input-email"
                 value={emailValue}
                 onChange={e => this.updateEmailValue(e)}

@@ -17,7 +17,7 @@ const routes = {
     connected: false
   },
   '/home': {
-    component: history => <Dashboard history={history} />,
+    component: history => <Dashboard history={history} update={false} />,
     nav: true,
     connected: true
   },

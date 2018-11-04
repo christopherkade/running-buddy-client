@@ -27,7 +27,6 @@ class SignUp extends Component {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         localStorage.setItem('jwt', data.token);
         localStorage.setItem('email', emailValue);
         this.props.history.push('/home');

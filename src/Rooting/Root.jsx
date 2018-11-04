@@ -28,12 +28,13 @@ class Root extends Component {
       })
         .then(response => response.json())
         .then(data => {
+          localStorage.setItem('id', data.id);
           this.setState({
             connected: true,
             handleAuth: true
           });
         })
-        .catch(() => {
+        .catch(e => {
           this.setState({ connected: false, handleAuth: true });
         });
     } else {

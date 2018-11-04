@@ -7,11 +7,20 @@ import DashboardCards from './DashboardCards';
 class ContentDashboard extends Component {
   componentDidMount() {
     const { fetchData } = this.props;
-    fetchData('http://599167402df2f40011e4929a.mockapi.io/items'); // change for the api server
+    fetchData('http://localhost:3000/session/district/1'); // change for the api server
+  }
+
+  componentDidUpdate(prevProps) {
+    const { fetchData, district } = this.props;
+    if (district !== prevProps.district) {
+      fetchData('http://localhost:3000/session/district/' + district); // change for the api server
+    }
   }
 
   render() {
     const { hasErrored, isLoading, items, update } = this.props;
+    if (update) {
+    }
     if (hasErrored) {
       return <p>un probleme est survenu, réessayer dans quelques instants</p>;
     }
@@ -20,9 +29,13 @@ class ContentDashboard extends Component {
     }
     return (
       <div className="containerCards">
-        {items.map(item => (
-          <DashboardCards key={item.id} session={item} update={update} />
-        ))}
+        {update
+          ? items.map(item => {
+              return item.ownerId === parseInt(localStorage.getItem('id')) ? (
+                <DashboardCards key={item.id} session={item} update={update} />
+              ) : null;
+            })
+          : items.map(item => <DashboardCards key={item.id} session={item} update={update} />)}
       </div>
     );
   }
@@ -33,10 +46,11 @@ ContentDashboard.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   hasErrored: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  upate: PropTypes.bool.isRequired
+  update: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
+  district: state.district,
   items: state.items,
   hasErrored: state.error,
   isLoading: state.loading
