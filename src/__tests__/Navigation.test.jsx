@@ -15,6 +15,10 @@ it('renders without crashing', () => {
   expect(wrapper).not.toBe(null);
 });
 
+it('should display a valid home link', () => {
+  expect(wrapper.find('.title').props().to).toBe('/home');
+});
+
 it('should display a valid title', () => {
-  expect(wrapper.find('.title').text()).toBe('Running Buddy');
+  expect(wrapper.find('.title').props().children).toBe('Running Buddy');
 });
