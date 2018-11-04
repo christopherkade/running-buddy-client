@@ -9,7 +9,7 @@ class ModalSession extends Component {
     super(props);
   }
   deleteSession = () => {
-    fetch('http://localhost:3000/session/' + this.props.session.id, {
+    fetch('https://dry-ocean-92944.herokuapp.com/session/' + this.props.session.id, {
       method: 'DELETE',
       headers: {
         Authorization: 'bearer ' + localStorage.getItem('jwt'),
@@ -24,7 +24,7 @@ class ModalSession extends Component {
   };
 
   addUserToSession = () => {
-    fetch('http://localhost:3000/session/join/' + this.props.session.id, {
+    fetch('https://dry-ocean-92944.herokuapp.com/session/join/' + this.props.session.id, {
       method: 'POST',
       headers: {
         Authorization: 'bearer ' + localStorage.getItem('jwt'),

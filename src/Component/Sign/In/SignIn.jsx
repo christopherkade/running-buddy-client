@@ -16,7 +16,7 @@ class SignIn extends Component {
 
   loginUser = () => {
     const { emailValue, passwordValue } = this.state;
-    fetch('http://localhost:3000/user/login', {
+    fetch('https://dry-ocean-92944.herokuapp.com/user/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

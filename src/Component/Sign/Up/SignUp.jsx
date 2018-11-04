@@ -17,7 +17,7 @@ class SignUp extends Component {
 
   signUpUser = () => {
     const { emailValue, usernameValue, passwordValue } = this.state;
-    fetch('http://localhost:3000/user/register', {
+    fetch('https://dry-ocean-92944.herokuapp.com/user/register', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

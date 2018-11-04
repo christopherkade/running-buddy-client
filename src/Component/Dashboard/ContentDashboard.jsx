@@ -7,13 +7,13 @@ import DashboardCards from './DashboardCards';
 class ContentDashboard extends Component {
   componentDidMount() {
     const { fetchData } = this.props;
-    fetchData('http://localhost:3000/session/district/1'); // change for the api server
+    fetchData('https://dry-ocean-92944.herokuapp.com/session/district/1'); // change for the api server
   }
 
   componentDidUpdate(prevProps) {
     const { fetchData, district } = this.props;
     if (district !== prevProps.district) {
-      fetchData('http://localhost:3000/session/district/' + district); // change for the api server
+      fetchData('https://dry-ocean-92944.herokuapp.com/session/district/' + district); // change for the api server
     }
   }
 

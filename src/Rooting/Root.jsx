@@ -20,7 +20,7 @@ class Root extends Component {
 
   checkConnected = () => {
     if (localStorage.getItem('jwt') && localStorage.getItem('email')) {
-      fetch('http://localhost:3000/user/' + localStorage.getItem('email'), {
+      fetch('https://dry-ocean-92944.herokuapp.com/user/' + localStorage.getItem('email'), {
         method: 'GET',
         headers: {
           Authorization: 'bearer ' + localStorage.getItem('jwt')
