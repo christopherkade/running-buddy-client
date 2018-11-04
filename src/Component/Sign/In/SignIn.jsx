@@ -16,7 +16,7 @@ class SignIn extends Component {
 
   loginUser = () => {
     const { emailValue, passwordValue } = this.state;
-    fetch('http://localhost:3000/user/login', {
+    fetch('https://dry-ocean-92944.herokuapp.com/user/login', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -55,8 +55,8 @@ class SignIn extends Component {
           <Card>
             <CardBody>
               <Input
-                placeholder="E-mail"
-                type="email"
+                placeholder="Email"
+                type="text"
                 className="input input-email"
                 value={emailValue}
                 onChange={e => this.updateEmailValue(e)}

@@ -1,49 +1,99 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Dashboard.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'reactstrap';
 import { FaCalendarAlt, FaUserAlt, FaPlus } from 'react-icons/fa';
 
-/* remove for api */
-const members = ['John', 'Thomas', 'Marie'];
+class ModalSession extends Component {
+  constructor(props) {
+    super(props);
+  }
+  deleteSession = () => {
+    fetch('https://dry-ocean-92944.herokuapp.com/session/' + this.props.session.id, {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'bearer ' + localStorage.getItem('jwt'),
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.props.toggleModal();
+      });
+  };
 
-const ModalSession = ({ session, toggleModal, modal, update }) => (
-  <Modal isOpen={modal} toggle={toggleModal}>
-    <ModalHeader toggle={toggleModal}>{session.label}</ModalHeader>
-    <ModalBody>
-      <div className="row">
-        <div className="col">Session description goes here</div>
-        <div className="col col-6 dateCol">
-          <div className="containerFooter">
-            <div className="date modalDate">
-              <Input disabled value={`0${session.id}/10/2018`} />
-              <div className="calendar modalCalendar">
-                <FaCalendarAlt />
+  addUserToSession = () => {
+    fetch('https://dry-ocean-92944.herokuapp.com/session/join/' + this.props.session.id, {
+      method: 'POST',
+      headers: {
+        Authorization: 'bearer ' + localStorage.getItem('jwt'),
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.props.toggleModal();
+      });
+  };
+
+  render() {
+    const { session, toggleModal, modal, update } = this.props;
+    const date = new Date(session.start);
+    return (
+      <Modal isOpen={modal} toggle={toggleModal}>
+        <ModalHeader toggle={toggleModal}>{session.title}</ModalHeader>
+        <ModalBody>
+          <div className="row">
+            <div className="col">{session.description}</div>
+            <div className="col col-6 dateCol">
+              <div className="containerFooter">
+                <div className="date modalDate">
+                  <Input disabled value={date.toLocaleDateString()} />
+                  <div className="calendar modalCalendar">
+                    <FaCalendarAlt />
+                  </div>
+                </div>
+                <div />
               </div>
             </div>
-            <div />
           </div>
-        </div>
-      </div>
-    </ModalBody>
-    <ModalFooter>
-      {members.map(member => (
-        <div key={`member-${member}`} className="badgeModal">
-          <FaUserAlt />
-        </div>
-      ))}
-      {update ? (
-        <Button color="danger" onClick={() => toggleModal(true)}>
-          delete Session
-        </Button>
-      ) : (
-        <Button className="badgeModalButton" onClick={toggleModal}>
-          <FaPlus />
-        </Button>
-      )}
-    </ModalFooter>
-  </Modal>
-);
+        </ModalBody>
+        <ModalFooter>
+          {session.runner.map(member => (
+            <div key={`member-${member.id}`}>
+              <button
+                disabled
+                type="button"
+                className="btn btn-secondary badgeModal"
+                title={member.username}
+              >
+                <FaUserAlt />
+              </button>
+            </div>
+          ))}
+          {update ? (
+            <Button color="danger" onClick={this.deleteSession}>
+              delete Session
+            </Button>
+          ) : (
+            <Button
+              className="badgeModalButton"
+              onClick={this.addUserToSession}
+              disabled={
+                !!session.runner.filter(runner => runner.email === localStorage.getItem('email'))
+                  .length
+              }
+            >
+              <FaPlus />
+            </Button>
+          )}
+        </ModalFooter>
+      </Modal>
+    );
+  }
+}
 
 ModalSession.propTypes = {
   session: PropTypes.shape({

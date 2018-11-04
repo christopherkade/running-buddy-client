@@ -25,7 +25,12 @@ export function itemsFetchData(url) {
   return dispatch => {
     dispatch(itemsIsLoading(true));
 
-    fetch(url)
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: 'bearer ' + localStorage.getItem('jwt')
+      }
+    })
       .then(response => {
         if (!response.ok) {
           throw Error(response.statusText);

@@ -33,7 +33,7 @@ it('should have the correct sign-up navigation links', () => {
 });
 
 it('should have the right email placeholder', () => {
-  expect(wrapper.find('.input-email').props().placeholder).toBe('E-mail');
+  expect(wrapper.find('.input-email').props().placeholder).toBe('Email');
 });
 
 it('should have the right password placeholder', () => {

@@ -17,7 +17,7 @@ class SignUp extends Component {
 
   signUpUser = () => {
     const { emailValue, usernameValue, passwordValue } = this.state;
-    fetch('http://localhost:3000/user/register', {
+    fetch('https://dry-ocean-92944.herokuapp.com/user/register', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -27,7 +27,6 @@ class SignUp extends Component {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         localStorage.setItem('jwt', data.token);
         localStorage.setItem('email', emailValue);
         this.props.history.push('/home');

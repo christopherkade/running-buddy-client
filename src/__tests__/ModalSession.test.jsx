@@ -10,7 +10,8 @@ enzyme.configure({ adapter: new Adapter() });
 beforeEach(() => {
   const session = {
     title: 'Session title',
-    description: 'Session description'
+    description: 'Session description',
+    runner: []
   };
   const modal = true;
   const toggleModalFunc = () => {};

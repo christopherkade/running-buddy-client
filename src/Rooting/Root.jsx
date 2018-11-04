@@ -20,7 +20,7 @@ class Root extends Component {
 
   checkConnected = () => {
     if (localStorage.getItem('jwt') && localStorage.getItem('email')) {
-      fetch('http://localhost:3000/user/' + localStorage.getItem('email'), {
+      fetch('https://dry-ocean-92944.herokuapp.com/user/' + localStorage.getItem('email'), {
         method: 'GET',
         headers: {
           Authorization: 'bearer ' + localStorage.getItem('jwt')
@@ -28,12 +28,13 @@ class Root extends Component {
       })
         .then(response => response.json())
         .then(data => {
+          localStorage.setItem('id', data.id);
           this.setState({
             connected: true,
             handleAuth: true
           });
         })
-        .catch(() => {
+        .catch(e => {
           this.setState({ connected: false, handleAuth: true });
         });
     } else {

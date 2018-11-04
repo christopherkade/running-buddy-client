@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import Setting from '../Component/Setting/index';
 
 let wrapper = null;
+const localStorage = '';
 
 enzyme.configure({ adapter: new Adapter() });
 
@@ -13,17 +14,6 @@ beforeEach(() => {
 
 it('renders without crashing', () => {
   expect(wrapper).not.toBe(null);
-});
-
-it('has a valid state', () => {
-  expect(wrapper.instance().state.modal).toBe(false);
-});
-
-it('can have its state changed without failing', () => {
-  wrapper.setState({
-    modal: true
-  });
-  expect(wrapper.instance().state.modal).toBe(true);
 });
 
 it('has a valid My Sessions button link', () => {

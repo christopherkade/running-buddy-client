@@ -15,8 +15,25 @@ import {
 class ModalSession extends Component {
   constructor(props) {
     super(props);
-    this.state = { desc: '', name: '', date: new Date() };
+    this.state = { desc: '', name: '', date: new Date(), address: '', district: 0 };
   }
+
+  createSession = () => {
+    const { desc, name, date, address, district } = this.state;
+    fetch('https://dry-ocean-92944.herokuapp.com/session/create', {
+      method: 'POST',
+      headers: {
+        Authorization: 'bearer ' + localStorage.getItem('jwt'),
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ title: name, description: desc, start: date, district, address })
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.props.toggleModal();
+      });
+  };
 
   render() {
     const { modal, toggleModal } = this.props;
@@ -53,8 +70,26 @@ class ModalSession extends Component {
                 type="date"
                 placeholder="Date"
                 onChange={e => {
-                  console.log(e.target.value);
                   this.setState({ date: e.target.value });
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label>Address</Label>
+              <Input
+                placeholder="Address"
+                onChange={e => {
+                  this.setState({ address: e.target.value });
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label>District</Label>
+              <Input
+                type="number"
+                placeholder="District"
+                onChange={e => {
+                  this.setState({ district: e.target.value });
                 }}
               />
             </FormGroup>
@@ -62,7 +97,7 @@ class ModalSession extends Component {
         </ModalBody>
         <ModalFooter>
           <Button onClick={() => toggleModal(true)}>Cancel</Button>
-          <Button color="success" onClick={() => toggleModal(true)}>
+          <Button color="success" onClick={this.createSession}>
             Save Session
           </Button>
         </ModalFooter>
