@@ -5,9 +5,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'react
 import { FaCalendarAlt, FaUserAlt, FaPlus } from 'react-icons/fa';
 
 class ModalSession extends Component {
-  constructor(props) {
-    super(props);
-  }
   deleteSession = () => {
     fetch('https://dry-ocean-92944.herokuapp.com/session/' + this.props.session.id, {
       method: 'DELETE',
@@ -75,7 +72,7 @@ class ModalSession extends Component {
           ))}
           {update ? (
             <Button color="danger" onClick={this.deleteSession}>
-              delete Session
+              Delete session
             </Button>
           ) : (
             <Button

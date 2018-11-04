@@ -19,10 +19,8 @@ class ContentDashboard extends Component {
 
   render() {
     const { hasErrored, isLoading, items, update } = this.props;
-    if (update) {
-    }
     if (hasErrored) {
-      return <p>un probleme est survenu, réessayer dans quelques instants</p>;
+      return <p>Un probleme est survenu, réessayer dans quelques instants</p>;
     }
     if (isLoading) {
       return <p>Chargement…</p>;
